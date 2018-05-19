@@ -1,3 +1,5 @@
+source("plot_functions.R")
+
 final_T = 10
 num_steps = 1000
 D = 1
@@ -7,6 +9,8 @@ dt = t[2]-t[1]
 noise = rnorm(num_steps,0,1)
 
 x = sqrt(dt*D)*cumsum(noise)
+x = rbind(x,-x)
 
-plot(t,x,type="s",ylim = c(-2*sqrt(final_T*D),2*sqrt(final_T*D)),
-     main="Brownian Motion")
+plot_timeseries(t,x)
+
+#plot(t,x,type="s",ylim = c(-2*sqrt(final_T*D),2*sqrt(final_T*D)),main="Brownian Motion")
