@@ -8,4 +8,5 @@ noise = rnorm(num_steps,0,1)
 
 x = sqrt(dt*D)*cumsum(noise)
 
-plot(t,x,type="s",ylim = c(-2*sqrt(final_T*D),2*sqrt(final_T*D)))
+plot(t,x,type="s",ylim = c(-2*sqrt(final_T*D),2*sqrt(final_T*D)),
+     main="Brownian Motion")
